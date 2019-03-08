@@ -1,0 +1,56 @@
+<h1 class="text-center">Accounts Info</h1>
+<nav class="navbar navbar-default">
+	<div class="navbar-header">
+
+		<div class="alert alert-default navbar-brand search-box">
+			<button class="btn btn-primary" ng-show="show_form"
+				ng-click="formToggle()">
+				Add Employee <span class="glyphicon glyphicon-plus"
+					aria-hidden="true"></span>
+			</button>
+		</div>
+	</div>
+</nav>
+<div class="col-md-6 col-md-offset-3">
+	
+</div>
+
+<div class="clearfix"></div>
+<!-- Table to show employee detalis -->
+<div class="table-responsive">
+	<table class="table table-hover">
+		<tr>
+			<th>Name</th>
+			<th>Currency</th>
+			<th>Category</th>
+			<th>Type</th>
+			<th>URL</th>
+			<th>Username</th>
+			<th>Password</th>
+			<th>Last Modified</th>
+			<th></th>
+			<th></th>
+		</tr>
+		<tr ng-repeat="detail in details">
+			<td><span>{{detail.name}}</span></td>
+			<td>{{detail.currency}}</td>
+			<td>{{detail.category}}</td>
+			<td>{{detail.type}}</td>
+			<td>{{detail.url}}</td>
+			<td>{{detail.username}}</td>
+			<td>{{detail.password}}</td>
+			<td>{{detail.lastModified | date}}</td>
+			<td>
+				<button class="btn btn-warning" ng-click="editInfo(detail)"
+					title="Edit">
+					<span class="glyphicon glyphicon-edit"></span>
+				</button>
+			</td>
+			<td>
+				<button class="btn btn-danger" ng-click="deleteInfo(detail)"
+					title="Delete">
+					<span class="glyphicon glyphicon-trash"></span>
+				</button>
+			</td>
+		</tr>
+	</table>
