@@ -47,4 +47,8 @@ public class TransactionController {
 		return transactionDao.getAllTransactions();
 	}
 	
+	public int addTwoNum(int one, int two) {
+		return one + two;
+	}
+	
 }
